@@ -1,0 +1,10 @@
+@media (max-width: 959px) {
+    #items {
+        flex-direction: column;
+    }
+    
+    #items aside {
+        margin-right: 0;
+        width: 100%;
+    }
+}
