@@ -1,9 +1,11 @@
 @media (max-width: 959px) {
-    #items {
+    #pieces,
+    #controls {
         flex-direction: column;
     }
     
-    #items aside {
+    #pieces aside,
+    #controls > * {
         margin-right: 0;
         width: 100%;
     }
