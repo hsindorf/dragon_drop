@@ -1,0 +1,33 @@
+/* header */
+
+header h1 {
+    color: white;
+    font-size: 2em;
+    padding: 1em;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* scene */
+
+#scene {
+    height: 480px;
+    width: 100%;
+}
+
+/* items container */
+
+#items {
+    display: flex;
+}
+
+#items aside {
+    width: 300px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    min-height: 300px;
+}
+
+#items aside:nth-child(3) {
+    margin-right: 0;
+}
