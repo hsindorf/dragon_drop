@@ -19,12 +19,29 @@
         <h1>Dragon Drop</h1>
     </header>
     <main>
-        <section id="scene" class="container"></section>
-        <section id="items">
-            <aside class="container"></aside>
-            <aside class="container"></aside>
-            <aside class="container"></aside>
+        <section id="scene" class="container sidescroller"></section>
+        <section id="controls">
+            <select class="container">
+                <option value="---">select a scene</option>
+                <option value="forest">Forest SideScroller</option>
+            </select>
+            <a href="#" id="clearContents" class="container">Clear (Click Here)</a>
+            <a href="#" id="trash" class="container">Remove (Drag Here)</a>
+        </section>
+        <section id="pieces">
+            <aside id="charactersContainer" class="container pieces-container">
+                <h2>Characters</h2>
+            </aside>
+            <aside id="itemsContainer" class="container pieces-container">
+                <h2>Items</h2>
+            </aside>
+            <aside id="effectsContainer" class="container pieces-container">
+                <h2>Effects</h2>
+            </aside>
         </section>
     </main>
+
+    <script src="js/populate-images.js"></script>
+    <script src="js/drag-n-drop.js"></script>
 </body>
 </html>
