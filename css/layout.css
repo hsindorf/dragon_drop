@@ -3,6 +3,6 @@ header, main {
     max-width: 960px;
 }
 
-section {
+.container {
     margin-bottom: 30px;
 }

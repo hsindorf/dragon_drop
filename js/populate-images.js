@@ -5,13 +5,20 @@ let itemsContainer = document.getElementById('itemsContainer');
 let effectsContainer = document.getElementById('effectsContainer');
 
 let charactersImageNames = [
-  'bee'
+  'adventurer',
+  'adventurer-bow',
+  'bandit',
+  'bandit2'
 ];
+
 let itemsImageNames = [
-  'barrel',
-  'house'
+
 ];
-let effectsImageNames = [];
+
+let effectsImageNames = [
+  'fireball',
+  'nebula'
+];
 
 let imageReferences = [];
 

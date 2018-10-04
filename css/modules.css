@@ -23,21 +23,19 @@ header h1 {
 
 #controls {
     display: flex;
+    justify-content: space-between;
 }
 
 #controls > * {
-    font-family: 'Chelsea Market';
-    margin-right: 30px;
+    display: block;
     width: 300px;
     text-align: center;
+    text-align-last:center;
 }
 
-#controls > *:nth-child(3) {
-    margin-right: 0;
-}
-
-#controls a {
-    /* background-color: rgb(193, 240, 255); */
+#controls a,
+#controls select {
+    font-size: 1em;
     padding: 1em;
 }
 
@@ -45,28 +43,34 @@ header h1 {
 #controls a:hover,
 #controls a:active {
     color: black;
+    padding-top: 1.2em;
     text-decoration: none;
+}
+
+#controls select {
+    border: none;
+    text-align: center;
 }
 
 /* pieces container */
 
 #pieces {
     display: flex;
+    justify-content: space-between;
 }
 
 #pieces aside {
     width: 300px;
     margin-bottom: 30px;
-    margin-right: 30px;
-    min-height: 300px;
-}
-
-#pieces aside:nth-child(3) {
-    margin-right: 0;
 }
 
 .pieces-container {
     padding: 30px;
+}
+
+.pieces-container h2 {
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 .piece:hover {

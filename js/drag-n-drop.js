@@ -12,7 +12,6 @@ function addListeners() {
     imageReferences[i].addEventListener('dragend', imageDragEnd);
   }
   sceneContainer.addEventListener('dragenter', sceneDragEnter);
-  sceneContainer.addEventListener('dragleave', sceneDragLeave);
   sceneContainer.addEventListener('dragover', sceneDragOver);
   sceneContainer.addEventListener('drop', sceneDrop);
 
@@ -21,6 +20,7 @@ function addListeners() {
   trash.addEventListener('click', trashClick);
   trash.addEventListener('dragenter', trashDragEnter);
   trash.addEventListener('dragover', trashDragOver);
+  trash.addEventListener('dragleave', trashDragLeave);
   trash.addEventListener('drop', trashDrop);
 }
 
@@ -48,10 +48,12 @@ function imageDragEnd(event) {
 function imageCloneDragStart(event) {
   draggedItem = event.target;
   draggingCopy = true;
+  event.target.style.opacity = '0.4';
   event.dataTransfer.dropEffect = 'move';
 }
 
 function imageCloneDragEnd(event) {
+  event.target.style.opacity = '1';
 }
 
 // these listeners are for the target scene
@@ -61,9 +63,6 @@ function sceneDragEnter(event) {
   event.dataTransfer.dropEffect = 'move';
 }
 
-function sceneDragLeave(event) {
-}
-
 function sceneDragOver(event) {
   event.preventDefault();
 }
@@ -71,9 +70,8 @@ function sceneDragOver(event) {
 function sceneDrop(event) {
   if (!draggingCopy) {
     event.target.appendChild(draggedItem);
-  } else {
-    //do what happens when you drag around the copy
   }
+  savePosition(draggedItem);
 }
 
 // event listeners for the trash can
@@ -84,14 +82,21 @@ function trashClick(event) {
 
 function trashDragEnter(event) {
   event.preventDefault();
+  trash.style.backgroundColor = 'pink';
 }
 
 function trashDragOver(event) {
   event.preventDefault();
 }
 
+function trashDragLeave(event) {
+  event.preventDefault();
+  trash.style.backgroundColor = '';
+}
+
 function trashDrop(event) {
   event.preventDefault();
+  trash.style.backgroundColor = '';
   if(draggingCopy) {
     draggedItem.parentNode.removeChild(draggedItem);
   }
@@ -102,6 +107,15 @@ function trashDrop(event) {
 function clearScene(event) {
   event.preventDefault();
   sceneContainer.innerText = '';
+}
+
+// this saves the position of the element when you move it
+
+function savePosition(element) {
+  element.style.position = 'absolute';
+  element.style.zIndex = 1000;
+  element.style.left = event.pageX - element.offsetWidth / 2 + 'px';
+  element.style.top = event.pageY - element.offsetHeight / 2 + 'px';
 }
 
 addListeners();
