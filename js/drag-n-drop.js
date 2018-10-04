@@ -31,6 +31,8 @@ function imageDragStart(event) {
   draggedItem = event.target.cloneNode(true);
   draggedItem.addEventListener('dragstart', imageCloneDragStart);
   draggedItem.addEventListener('dragend', imageCloneDragEnd);
+  draggedItem.addEventListener('dblclick', flipPiece);
+  draggedItem.addEventListener('click', resizePiece);
   draggedItem.classList.add('copy');
 
   event.target.style.opacity = '0.4';
@@ -72,6 +74,7 @@ function sceneDrop(event) {
     event.target.appendChild(draggedItem);
   }
   savePosition(draggedItem);
+  playSoundOnDrop();
 }
 
 // event listeners for the trash can

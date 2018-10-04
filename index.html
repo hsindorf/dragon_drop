@@ -19,11 +19,13 @@
         <h1>Dragon Drop</h1>
     </header>
     <main>
-        <section id="scene" class="container sidescroller"></section>
+        <section id="scene" class="container">Choose a scene below!</section>
         <section id="controls">
-            <select class="container">
-                <option value="---">select a scene</option>
-                <option value="forest">Forest SideScroller</option>
+            <select class="container" id="sceneSelector">
+                <option>Choose a scene!</option>
+                <option value="village">Village</option>
+                <option value="sidescroller">Sidescroller</option>
+                <option value="cave">Cave</option>
             </select>
             <a href="#" id="clearContents" class="container">Clear (Click Here)</a>
             <a href="#" id="trash" class="container">Remove (Drag Here)</a>
@@ -43,5 +45,8 @@
 
     <script src="js/populate-images.js"></script>
     <script src="js/drag-n-drop.js"></script>
+    <script src="js/image-controls.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/stage.js"></script>
 </body>
 </html>
