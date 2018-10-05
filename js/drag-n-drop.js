@@ -10,6 +10,9 @@ function addListeners() {
   for (let i = 0; i < imageReferences.length; i++) {
     imageReferences[i].addEventListener('dragstart', imageDragStart);
     imageReferences[i].addEventListener('dragend', imageDragEnd);
+
+    imageReferences[i].addEventListener('touchstart', imageDragStart);
+    imageReferences[i].addEventListener('touchend', imageDragEnd);
   }
   sceneContainer.addEventListener('dragenter', sceneDragEnter);
   sceneContainer.addEventListener('dragover', sceneDragOver);
@@ -31,6 +34,8 @@ function imageDragStart(event) {
   draggedItem = event.target.cloneNode(true);
   draggedItem.addEventListener('dragstart', imageCloneDragStart);
   draggedItem.addEventListener('dragend', imageCloneDragEnd);
+  draggedItem.addEventListener('dblclick', flipPiece);
+  draggedItem.addEventListener('click', resizePiece);
   draggedItem.classList.add('copy');
 
   event.target.style.opacity = '0.4';
@@ -72,6 +77,7 @@ function sceneDrop(event) {
     event.target.appendChild(draggedItem);
   }
   savePosition(draggedItem);
+  playSoundOnDrop();
 }
 
 // event listeners for the trash can

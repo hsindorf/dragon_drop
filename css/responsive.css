@@ -13,10 +13,6 @@
         margin-top: calc(320px + 5em);
     } */
 
-    #scene {
-        height: 360px;
-    }
-
     #pieces,
     #controls {
         flex-direction: column;

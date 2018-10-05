@@ -11,12 +11,21 @@ header h1 {
 /* scene */
 
 #scene {
-    height: 480px;
+    height: 360px;
+    overflow: hidden;
     width: 100%;
 }
 
 #scene.sidescroller {
-    background-image: url('../images/backgrounds/bg-sidescroll.png')
+    background-image: url('../images/backgrounds/sidescroller.png');
+}
+
+#scene.cave {
+    background-image: url('../images/backgrounds/cave.png');
+}
+
+#scene.village {
+    background-image: url('../images/backgrounds/village.png');
 }
 
 /* controls */
@@ -75,4 +84,12 @@ header h1 {
 
 .piece:hover {
     cursor: move;
+}
+
+#pieces .piece {
+    max-width: 80px;
+}
+
+.flipped {
+    transform: scaleX(-1);
 }
