@@ -10,6 +10,9 @@ function addListeners() {
   for (let i = 0; i < imageReferences.length; i++) {
     imageReferences[i].addEventListener('dragstart', imageDragStart);
     imageReferences[i].addEventListener('dragend', imageDragEnd);
+
+    imageReferences[i].addEventListener('touchstart', imageDragStart);
+    imageReferences[i].addEventListener('touchend', imageDragEnd);
   }
   sceneContainer.addEventListener('dragenter', sceneDragEnter);
   sceneContainer.addEventListener('dragover', sceneDragOver);
