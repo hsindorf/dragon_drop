@@ -1,3 +1,10 @@
+/* fixed header and scene */
+
+#scene {
+    position: sticky;
+    top: 0;
+}
+
 /* header */
 
 header h1 {
@@ -11,21 +18,29 @@ header h1 {
 /* scene */
 
 #scene {
+    background-image: linear-gradient(to right top, #ffffff, #f5f5f5, #ececec, #e2e2e2, #d9d9d9);
     height: 360px;
     overflow: hidden;
     width: 100%;
+    transition: .1s ease;
 }
 
-#scene.sidescroller {
+.sidescroller #scene {
     background-image: url('../images/backgrounds/sidescroller.png');
 }
 
-#scene.cave {
+.cave #scene {
     background-image: url('../images/backgrounds/cave.png');
 }
 
-#scene.village {
+.village #scene {
     background-image: url('../images/backgrounds/village.png');
+}
+
+#scene p {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 100px;
 }
 
 /* controls */
@@ -78,8 +93,15 @@ header h1 {
 }
 
 .pieces-container h2 {
-    margin-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: .5em;
+    padding-bottom: .5em;
     text-align: center;
+}
+
+.pieces-container li {
+    margin-bottom: 1em;
+    list-style: disc inside;
 }
 
 .piece:hover {

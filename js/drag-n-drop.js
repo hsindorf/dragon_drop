@@ -11,8 +11,8 @@ function addListeners() {
     imageReferences[i].addEventListener('dragstart', imageDragStart);
     imageReferences[i].addEventListener('dragend', imageDragEnd);
 
-    imageReferences[i].addEventListener('touchstart', imageDragStart);
-    imageReferences[i].addEventListener('touchend', imageDragEnd);
+    // imageReferences[i].addEventListener('touchmove', imageDragStart);
+    // imageReferences[i].addEventListener('touchend', imageDragEnd);
   }
   sceneContainer.addEventListener('dragenter', sceneDragEnter);
   sceneContainer.addEventListener('dragover', sceneDragOver);
@@ -32,11 +32,14 @@ function addListeners() {
 function imageDragStart(event) {
   draggingCopy = false;
   draggedItem = event.target.cloneNode(true);
+  // these event listeners are for drag/drop controls
   draggedItem.addEventListener('dragstart', imageCloneDragStart);
   draggedItem.addEventListener('dragend', imageCloneDragEnd);
-  draggedItem.addEventListener('dblclick', flipPiece);
-  draggedItem.addEventListener('click', resizePiece);
+  // these event listeners are for image resize controls
+  draggedItem.addEventListener('click', pieceControls);
   draggedItem.classList.add('copy');
+
+  window.addEventListener('scroll', noscroll);
 
   event.target.style.opacity = '0.4';
   event.dataTransfer.dropEffect = 'move';
@@ -46,6 +49,8 @@ function imageDragEnd(event) {
   draggedItem = null;
   draggingCopy = null;
   event.target.style.opacity = '1';
+  
+  window.removeEventListener('scroll', noscroll);
 }
 
 // These listeners are for the cloned images once they've already been added
@@ -121,7 +126,13 @@ function savePosition(element) {
   element.style.position = 'absolute';
   element.style.zIndex = 1000;
   element.style.left = event.pageX - element.offsetWidth / 2 + 'px';
-  element.style.top = event.pageY - element.offsetHeight / 2 + 'px';
+  element.style.top = (event.pageY - window.pageYOffset) - element.offsetHeight / 2 + 'px';
+}
+
+//
+
+function noscroll() {
+  window.scrollTo( 0, 0 );
 }
 
 addListeners();

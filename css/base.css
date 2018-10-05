@@ -4,7 +4,20 @@
 }
 
 body {
-    background-color: #4b4b4b;
+    background-color: #5a4242;
+    transition: .1s ease;
+}
+
+body.sidescroller {
+    background-color: #2a949f;
+}
+
+body.cave {
+    background-color: #545130;
+}
+
+body.village {
+    background-color: #78a50c;
 }
 
 h1, h2 {
