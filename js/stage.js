@@ -6,8 +6,7 @@ sceneSelector.addEventListener('change', chooseScene);
 
 function chooseScene(event) {
   event.preventDefault();
-  console.log(sceneSelector);
   sceneContainer.innerText = '';
-  sceneContainer.className = 'container ' + event.target.value;
+  document.getElementById('body').className = event.target.value;
   playMusic(event);
 }
