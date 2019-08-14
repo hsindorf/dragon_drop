@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
 function pieceControls(event) {
   event.preventDefault();
   if (isCtrlPressed) {
-    let factor = -20;
+    const factor = -20;
     resizePiece(factor);
   } else if (isShiftPressed) {
-    event.target.classList.toggle('flipped');
+    event.target.classList.toggle("flipped");
   } else {
-    let factor = 20;
+    const factor = 20;
     resizePiece(factor);
   }
 }
@@ -29,22 +29,22 @@ let isShiftPressed = false;
 
 function listenForKeydown(event) {
   event.preventDefault();
-  if (event.key === 'Control') {
+  if (event.key === "Control") {
     isCtrlPressed = true;
   }
-  if (event.key === 'Shift') {
+  if (event.key === "Shift") {
     isShiftPressed = true;
   }
 }
 
 function listenForKeyup(event) {
-  if (event.key === 'Control') {
+  if (event.key === "Control") {
     isCtrlPressed = false;
   }
-  if (event.key === 'Shift') {
+  if (event.key === "Shift") {
     isShiftPressed = false;
   }
 }
 
-window.addEventListener('keydown', listenForKeydown);
-window.addEventListener('keyup', listenForKeyup);
+window.addEventListener("keydown", listenForKeydown);
+window.addEventListener("keyup", listenForKeyup);
