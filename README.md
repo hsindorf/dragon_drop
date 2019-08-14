@@ -16,6 +16,3 @@
 - phoenix1291 - sound effects [https://phoenix1291.itch.io/sound-effects-pack-2](https://phoenix1291.itch.io/sound-effects-pack-2)
 - JoelAudio - dragon1 - [https://freesound.org/people/JoelAudio/sounds/85568/](https://freesound.org/people/JoelAudio/sounds/85568/)
 - willc2_45220 - dragon2 [https://freesound.org/people/willc2_45220/sounds/75144/](https://freesound.org/people/willc2_45220/sounds/75144/)
-
-### Other
-- Bernardo Castilho - touch + drag and drop polyfill [https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat)
