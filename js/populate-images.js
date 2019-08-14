@@ -1,7 +1,6 @@
 'use strict';
 
 const charactersContainer = document.getElementById('charactersContainer');
-const itemsContainer = document.getElementById('itemsContainer');
 const effectsContainer = document.getElementById('effectsContainer');
 
 const charactersImageNames = [
@@ -12,8 +11,6 @@ const charactersImageNames = [
   'dragon1',
   'dragon2'
 ];
-
-const itemsImageNames = [];
 
 const effectsImageNames = ['fire-blast', 'ice-blast'];
 
@@ -39,5 +36,4 @@ populateImages(
   imageReferences,
   'characters'
 );
-populateImages(itemsContainer, itemsImageNames, imageReferences, 'items');
 populateImages(effectsContainer, effectsImageNames, imageReferences, 'effects');

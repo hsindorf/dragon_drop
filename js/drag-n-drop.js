@@ -12,14 +12,14 @@ function addListeners() {
     imageReference.addEventListener('dragend', imageDragEnd);
   });
   sceneContainer.addEventListener('dragenter', sceneDragEnter);
-  sceneContainer.addEventListener('dragover', sceneDragOver);
+  sceneContainer.addEventListener('dragover', noDefault);
   sceneContainer.addEventListener('drop', sceneDrop);
 
   clearContents.addEventListener('click', clearScene);
 
-  trash.addEventListener('click', trashClick);
+  trash.addEventListener('click', noDefault);
   trash.addEventListener('dragenter', trashDragEnter);
-  trash.addEventListener('dragover', trashDragOver);
+  trash.addEventListener('dragover', noDefault);
   trash.addEventListener('dragleave', trashDragLeave);
   trash.addEventListener('drop', trashDrop);
 }
@@ -46,6 +46,10 @@ function imageDragEnd(event) {
   event.target.style.opacity = '1';
 }
 
+function noDefault(event) {
+  event.preventDefault();
+}
+
 // These listeners are for the cloned images once they've already been added
 
 function imageCloneDragStart(event) {
@@ -66,10 +70,6 @@ function sceneDragEnter(event) {
   event.dataTransfer.dropEffect = 'move';
 }
 
-function sceneDragOver(event) {
-  event.preventDefault();
-}
-
 function sceneDrop(event) {
   if (!draggingCopy) {
     event.target.appendChild(draggedItem);
@@ -80,17 +80,9 @@ function sceneDrop(event) {
 
 // event listeners for the trash can
 
-function trashClick(event) {
-  event.preventDefault();
-}
-
 function trashDragEnter(event) {
   event.preventDefault();
   trash.style.backgroundColor = 'pink';
-}
-
-function trashDragOver(event) {
-  event.preventDefault();
 }
 
 function trashDragLeave(event) {
@@ -116,10 +108,10 @@ function clearScene(event) {
 // this saves the position of the element when you move it
 
 function savePosition(element) {
-  element.style.position = 'absolute';
+  element.style.position = 'fixed';
   element.style.zIndex = 1000;
-  element.style.left = `${event.pageX - element.offsetWidth / 2 - 350}px`; // this needs refactoring as opening devtools breaks it.
-  element.style.top = `${event.pageY - element.offsetHeight / 2 - 100}px`;
+  element.style.left = `${event.pageX - element.offsetWidth / 2}px`;
+  element.style.top = `${event.pageY - element.offsetHeight / 2}px`;
 }
 
 addListeners();
