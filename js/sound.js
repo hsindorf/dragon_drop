@@ -17,7 +17,7 @@ let classes;
 function playSoundOnDrop() {
   classes = draggedItem.getAttribute('class').split(' ');
   let regex = /type-/;
-  let typeClass = classes.find( item => regex.test(item) );
+  let typeClass = classes.find(item => regex.test(item));
   let audio = new Audio(`audio/${typeClass}.wav`);
   audio.voume = 0.8;
   audio.play();

@@ -1,60 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dragon Drop</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Chelsea+Market"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/modules.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body id="body">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/modules.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body id="body">
     <header>
-        <h1>Dragon Drop</h1>
+      <h1>Dragon Drop</h1>
     </header>
     <main>
-        <section id="scene" class="container"><p>Choose a scene below!</p></section>
-        <section id="controls">
-            <select class="container" id="sceneSelector">
-                <option>Choose a scene!</option>
-                <option value="village">Village</option>
-                <option value="sidescroller">Sidescroller</option>
-                <option value="cave">Cave</option>
-            </select>
-            <a href="#" id="clearContents" class="container">Clear (Click Here)</a>
-            <a href="#" id="trash" class="container">Remove (Drag Here)</a>
-        </section>
-        <section id="pieces">
-            <aside id="charactersContainer" class="container pieces-container">
-                <h2>Characters</h2>
-            </aside>
-            <aside id="itemsContainer" class="container pieces-container">
-                <h2>Instructions</h2>
-                <ul>
-                    <li>Select a scene from scene selector</li>
-                    <li>drag pieces from below</li>
-                    <li>shift + click to flip</li>
-                    <li>click to grow</li>
-                    <li>ctrl + click to shrink</li>
-                </ul>
-            </aside>
-            <aside id="effectsContainer" class="container pieces-container">
-                <h2>Items & Effects</h2>
-            </aside>
-        </section>
+      <section id="scene" class="container">
+        <p>Choose a scene below!</p>
+      </section>
+      <section id="controls">
+        <select class="container" id="sceneSelector">
+          <option>Choose a scene!</option>
+          <option value="village">Village</option>
+          <option value="sidescroller">Sidescroller</option>
+          <option value="cave">Cave</option>
+        </select>
+        <a href="#" id="clearContents" class="container">Clear (Click Here)</a>
+        <a href="#" id="trash" class="container">Remove (Drag Here)</a>
+      </section>
+      <section id="pieces">
+        <aside id="charactersContainer" class="container pieces-container">
+          <h2>Characters</h2>
+        </aside>
+        <aside id="itemsContainer" class="container pieces-container">
+          <h2>Instructions</h2>
+          <ul>
+            <li>Select a scene from scene selector</li>
+            <li>drag pieces from below</li>
+            <li>shift + click to flip</li>
+            <li>click to grow</li>
+            <li>ctrl + click to shrink</li>
+            <li>don't resize the page. everything will come crashing down</li>
+          </ul>
+        </aside>
+        <aside id="effectsContainer" class="container pieces-container">
+          <h2>Items & Effects</h2>
+        </aside>
+      </section>
     </main>
 
-    <script src="js/DragDropTouch.js"></script>
     <script src="js/populate-images.js"></script>
     <script src="js/drag-n-drop.js"></script>
     <script src="js/image-controls.js"></script>
     <script src="js/sound.js"></script>
     <script src="js/stage.js"></script>
-</body>
+  </body>
 </html>
