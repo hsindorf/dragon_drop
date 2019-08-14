@@ -120,8 +120,8 @@ function clearScene(event) {
 function savePosition(element) {
   element.style.position = "absolute";
   element.style.zIndex = 1000;
-  element.style.left = event.pageX - element.offsetWidth * 3 + 25 + "px";
-  element.style.top = event.pageY - element.offsetHeight * 2 + 25 + "px";
+  element.style.left = `${event.pageX - element.offsetWidth / 2 - 350}px`;
+  element.style.top = `${event.pageY - element.offsetHeight / 2 - 100}px`;
 }
 
 addListeners();
